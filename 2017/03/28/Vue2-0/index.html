@@ -1,0 +1,552 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>曾几何时</title><link rel="stylesheet" href="/css/index.css"><link rel="icon" href="/superman.ico"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script>/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js */
+"document"in self&&("classList"in document.createElement("_")&&(!document.createElementNS||"classList"in document.createElementNS("http://www.w3.org/2000/svg","g"))?!function(){"use strict";var t=document.createElement("_");if(t.classList.add("c1","c2"),!t.classList.contains("c2")){var e=function(t){var e=DOMTokenList.prototype[t];DOMTokenList.prototype[t]=function(t){var n,i=arguments.length;for(n=0;i>n;n++)t=arguments[n],e.call(this,t)}};e("add"),e("remove")}if(t.classList.toggle("c3",!1),t.classList.contains("c3")){var n=DOMTokenList.prototype.toggle;DOMTokenList.prototype.toggle=function(t,e){return 1 in arguments&&!this.contains(t)==!e?e:n.call(this,t)}}t=null}():!function(t){"use strict";if("Element"in t){var e="classList",n="prototype",i=t.Element[n],s=Object,r=String[n].trim||function(){return this.replace(/^\s+|\s+$/g,"")},o=Array[n].indexOf||function(t){for(var e=0,n=this.length;n>e;e++)if(e in this&&this[e]===t)return e;return-1},c=function(t,e){this.name=t,this.code=DOMException[t],this.message=e},a=function(t,e){if(""===e)throw new c("SYNTAX_ERR","An invalid or illegal string was specified");if(/\s/.test(e))throw new c("INVALID_CHARACTER_ERR","String contains an invalid character");return o.call(t,e)},l=function(t){for(var e=r.call(t.getAttribute("class")||""),n=e?e.split(/\s+/):[],i=0,s=n.length;s>i;i++)this.push(n[i]);this._updateClassName=function(){t.setAttribute("class",this.toString())}},u=l[n]=[],h=function(){return new l(this)};if(c[n]=Error[n],u.item=function(t){return this[t]||null},u.contains=function(t){return t+="",-1!==a(this,t)},u.add=function(){var t,e=arguments,n=0,i=e.length,s=!1;do t=e[n]+"",-1===a(this,t)&&(this.push(t),s=!0);while(++n<i);s&&this._updateClassName()},u.remove=function(){var t,e,n=arguments,i=0,s=n.length,r=!1;do for(t=n[i]+"",e=a(this,t);-1!==e;)this.splice(e,1),r=!0,e=a(this,t);while(++i<s);r&&this._updateClassName()},u.toggle=function(t,e){t+="";var n=this.contains(t),i=n?e!==!0&&"remove":e!==!1&&"add";return i&&this[i](t),e===!0||e===!1?e:!n},u.toString=function(){return this.join(" ")},s.defineProperty){var f={get:h,enumerable:!0,configurable:!0};try{s.defineProperty(i,e,f)}catch(d){void 0!==d.number&&-2146823252!==d.number||(f.enumerable=!1,s.defineProperty(i,e,f))}}else s[n].__defineGetter__&&i.__defineGetter__(e,h)}}(self));
+</script></head><body><header><div class="description"><a href="/"><img class="logo" src="/logo.png"></a><p></p></div><div class="search"><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">Search</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form></div><nav><ul class="nav"><li><a href="/" target="_self">HOME</a></li><li><a href="/archives/" target="_self">ARCHIVES</a></li><li><a href="https://github.com/ycwalker/hexo-theme-cutie" target="_blank">THEME</a></li><li><a href="https://github.com/liuhui1993" target="_blank">GITHUB</a></li></ul></nav></header><aside><button class="toggle expand"><span class="item1"></span><span class="item2"></span><span class="item3"></span></button><div class="directory hide"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue2-0"><span class="toc-number">1.</span> <span class="toc-text">Vue2.0</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vuejs"><span class="toc-number">1.1.</span> <span class="toc-text">Vuejs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">1.1.1.</span> <span class="toc-text">基本概念:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是MVVM"><span class="toc-number">2.</span> <span class="toc-text">什么是MVVM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue的指令"><span class="toc-number">3.</span> <span class="toc-text">Vue的指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vue常见的v-指令"><span class="toc-number">4.</span> <span class="toc-text">vue常见的v-指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#v-for"><span class="toc-number">5.</span> <span class="toc-text">v-for</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">6.</span> <span class="toc-text">自定义过滤器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#组件"><span class="toc-number">7.</span> <span class="toc-text">组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vue-router"><span class="toc-number">8.</span> <span class="toc-text">vue-router</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vue-resource"><span class="toc-number">9.</span> <span class="toc-text">vue-resource</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack"><span class="toc-number">10.</span> <span class="toc-text">webpack</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内容回顾"><span class="toc-number">11.</span> <span class="toc-text">内容回顾</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-1"><span class="toc-number">12.</span> <span class="toc-text">webpack</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack的使用"><span class="toc-number">13.</span> <span class="toc-text">webpack的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack的基本概念"><span class="toc-number">14.</span> <span class="toc-text">webpack的基本概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack的安装"><span class="toc-number">15.</span> <span class="toc-text">webpack的安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack中的Loader"><span class="toc-number">16.</span> <span class="toc-text">webpack中的Loader</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack中的插件"><span class="toc-number">17.</span> <span class="toc-text">webpack中的插件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack中webpack-dev-server"><span class="toc-number">18.</span> <span class="toc-text">webpack中webpack-dev-server</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#npm-amp-cmd控制面板-amp-cmd的指令"><span class="toc-number">19.</span> <span class="toc-text">npm? & cmd控制面板 &cmd的指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack案例"><span class="toc-number">20.</span> <span class="toc-text">webpack案例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目搭建-文件夹搭建、文件搭建"><span class="toc-number">21.</span> <span class="toc-text">项目搭建(文件夹搭建、文件搭建)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用-webpack-vue-来展示一个-Hello-Vue"><span class="toc-number">22.</span> <span class="toc-text">使用 webpack+vue 来展示一个 Hello Vue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#App-vue的结构"><span class="toc-number">23.</span> <span class="toc-text">App.vue的结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-config-js"><span class="toc-number">24.</span> <span class="toc-text">webpack.config.js</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用-html-webpack-plugin插件-webpack-dev-server包-来实现页面-文件-更新之后-自动在内存中打包并且刷新页面"><span class="toc-number">25.</span> <span class="toc-text">使用 html-webpack-plugin插件 + webpack-dev-server包 来实现页面(文件)更新之后,自动在内存中打包并且刷新页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-dev-server-使用过程中可能遇到的问题"><span class="toc-number">26.</span> <span class="toc-text">webpack-dev-server 使用过程中可能遇到的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-打包其它扩展名的文件"><span class="toc-number">27.</span> <span class="toc-text">webpack 打包其它扩展名的文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-打包css"><span class="toc-number">28.</span> <span class="toc-text">webpack 打包css</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#autoprefixer-loader"><span class="toc-number">29.</span> <span class="toc-text">autoprefixer-loader</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-打包less"><span class="toc-number">30.</span> <span class="toc-text">webpack 打包less</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-打包-sass"><span class="toc-number">31.</span> <span class="toc-text">webpack 打包 sass</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-实现图片及字体图标打包"><span class="toc-number">32.</span> <span class="toc-text">webpack 实现图片及字体图标打包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-es6转es5的语法"><span class="toc-number">33.</span> <span class="toc-text">webpack es6转es5的语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#es6语法总结"><span class="toc-number">34.</span> <span class="toc-text">es6语法总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue项目中使用到的Vue的技术点"><span class="toc-number">35.</span> <span class="toc-text">Vue项目中使用到的Vue的技术点</span></a></li></ol></div><script>var toggle = document.querySelector('.toggle')
+toggle.addEventListener('click', function () {
+  this.classList.toggle('expand')
+  document.querySelector('.directory').classList.toggle('hide')
+  document.querySelector('.post').classList.toggle('post-expand')
+})</script><script>setTimeout(document.body.click.bind(toggle), 300)</script></aside><article class="post post-content post-expand"><h1>Vue2.0</h1><time>Mar 28, 2017</time><h1 id="Vue2-0"><a href="#Vue2-0" class="headerlink" title="Vue2.0"></a>Vue2.0</h1><h2 id="Vuejs"><a href="#Vuejs" class="headerlink" title="Vuejs"></a>Vuejs</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念:"></a>基本概念:</h3><pre><code>    是一套前端的MVVM框架
+介绍
+    官网:https://cn.vuejs.org/
+
+学习资源:
+    http://aicoder.com/vue/preview/all.html#640203
+
+    https://github.com/malun666/vue-stepbystep
+
+    官方文档:https://cn.vuejs.org/v2/guide/
+
+优势:
+    体积小,大小100k,压缩后70k,适合移动站点的开发
+    有中文文档,甚至它的一些拓展包也是中文的文档,学习入门快
+
+目前Vue的使用情况
+
+    Vue项目：饿了么招聘：https://jobs-mobile.ele.me/#!/
+
+    知乎上的一个转帖：https://www.zhihu.com/question/38213423
+</code></pre><hr>
+<h1 id="什么是MVVM"><a href="#什么是MVVM" class="headerlink" title="什么是MVVM"></a>什么是MVVM</h1><pre><code>M : Model 模型/数据
+V : View 视图
+VM : View-Model 视图模型
+
+MVVM要解决的问题:
+    视图和模型分离的问题
+
+Vue中是怎么体现MVVM思想的呢?
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">        &lt;!--  这一堆id=app的div 就是 MVVM中的 View --&gt;</div><div class="line">        &lt;!--  注意点:以后所有的View必须写在 id=app 的div之间,写在别的地方他不认 --&gt;</div><div class="line">        &lt;div id=&quot;app&quot;&gt;</div><div class="line">                &lt;!-- 插值表达式 --&gt;</div><div class="line">                &#123;&#123;message&#125;&#125; </div><div class="line">        &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">        //vm 就是MVVM中的 VM</div><div class="line">        var vm = new Vue(&#123;</div><div class="line">            el:&quot;#app&quot;, //el代表到时候Vue去解析哪个元素下面的内容 , #代表id选择器,一定不能少</div><div class="line">            data:&#123; //data就是到时候展示在页面上面用的</div><div class="line">            message:&quot;Hello Vue 123&quot; //就是MVVM中的Model</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</code></pre><hr>
+<h1 id="Vue的指令"><a href="#Vue的指令" class="headerlink" title="Vue的指令"></a>Vue的指令</h1><pre><code>作用:
+    操作dom,View-Model就是利用这些指令,将数据填充到View
+    上面去展示的
+
+注意点:
+    我们在Vue中,大部分情况下,我们不要再直接操作dom了,应该操作Vue中的数据,
+    当数据改变了,Vue会使用它内部的指令去操作dom,进行渲染
+</code></pre><hr>
+<h1 id="vue常见的v-指令"><a href="#vue常见的v-指令" class="headerlink" title="vue常见的v-指令"></a>vue常见的v-指令</h1><pre><code>插值表达式 {{}}
+
+v-text:
+    这个是插值表达式的另外一种写法
+    注意:不能放到文本框中使用,通常是放到 div span p 标签中使用
+
+v-html:
+    这个能保证字符串中的html标签也能被浏览器正常解析
+
+v-on:
+    给html元素注册一些js事件:
+        click事件,change事件,keyup,keydown,xxx
+
+    写法:
+        在html元素中 &lt;button v-on:click=&quot;click&quot;&gt;显示或是隐藏元素&lt;/button&gt;
+
+        在&lt;script&gt;标签中,要单独写一个 methods的代码块
+
+    注意:
+        可以利用@来简化html中v-on的写法
+
+v-bind:
+    作用:是可以在html元素上拓展任何属性,例如
+    &lt;span v-bind:title=&apos;可以是data中的一个变量&apos;&gt;&lt;/span&gt;
+
+    利用:可以用来简写,比如&lt;span :title=&apos;可以是data中的一个变量&apos;&gt;&lt;/span&gt;
+    应用场景:一般动态的值需要绑定,比如img的src属性,或是需要动态变化的样式
+
+    注意点:
+        v-bind的特殊写法,原因是在绑定某些特殊属性的时候,这些属性由固定的字符串加上一个变量来组成,那么这个时候,如果使用 :href=&apos;getnews&apos;+id,那么id是找不到的,应该这样写 v-bind=&quot;{href:&apos;getnews/&apos;+id}&quot;
+
+v-model:
+    mvvm设计模式
+    双向数据绑定
+    使用场景:一般用在文本框中用来进行视图和模型的双向绑定
+
+v-if:
+    根据一个表达式的值判断,如果值为真,就解析这个html元素,否则不解析这个html元素,在原有的位置使用&lt;!-- --&gt;占位,注意:它不会解析
+
+v-show:
+    根据一个表达式的值判断,如果值为真,就显示这个html元素,否则隐藏这个html元素,注意:它会解析,注意与v-if的区别
+</code></pre><hr>
+<h1 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h1><pre><code>作用:
+    遍历数组或者对象中的成员按照一定的模版内容重复生成html内容
+
+遍历数组
+    如:
+        var list = [1,2,3];
+
+    1.不需要索引
+        v-for=&quot;item in list&quot; :key=&quot;item.一个唯一标识&quot;;
+
+    2.需要索引
+        v-for=&quot;(item,index) in list&quot; :key=&quot;index&quot;;
+
+
+遍历对象中的属性
+    var user={&quot;name&quot;:&quot;duanzihuang&quot;,&quot;age&quot;:20};
+    v-for=&quot;(item,key,index) in user :key=&quot;index&quot; &quot;;
+
+直接遍历整数
+    v-for=&quot;item in 3&quot; ===&gt; 1,2,3
+
+注意点:
+    v-for 标签一定要加在被遍历的元素上,不要写错地方啦
+</code></pre><hr>
+<h1 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h1><pre><code>vue1.x和2.x的区别:
+    vue1.x提供了一些全局的过滤器,2.x废弃了,需要程序员自己写
+
+
+组件私有过滤器:
+    定义:
+        在组件的&lt;script&gt;中添加一个属性 filters:{
+            tolowercase(input){
+                return input.toLowerCase();
+            }
+        }
+
+    使用:
+        在组件的&lt;template&gt;标签中,使用的地方使用即可,例如
+            {{msg | tolowercase}}
+
+    不足之处:
+        只能在自己定义的Vue对象中使用,在其它Vue对象中就使用不了了
+
+全局的过滤器:
+    定义:
+        在main.js中定义即可
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Vue.filter(&apos;toUpperCase&apos;,function(input)&#123;</div><div class="line">    return input.toUpperCase();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+
+    使用:
+        在组件的&lt;template&gt;标签中,使用的地方使用即可,例如
+            {{msg | tolowercase}}
+
+    注意点:
+        全局过滤器的设置,一定要在创建Vue对象之前,否则不起作用
+
+注意点:
+    如果一个vue组件中,定义的私有过滤器的名称和全局过滤器的名称相同的化,私有过滤器的调用优先级高于全局过滤器
+</code></pre><hr>
+<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><pre><code>作用:
+    用来显示页面内容的
+
+写法:
+    四种,详见代码
+
+注意点:
+    在vue2.0中,组件必须要有一个根元素
+</code></pre><h1 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h1><pre><code>作用:路由跳转
+
+网址:
+    https://router.vuejs.org/zh-cn/
+    https://github.com/vuejs/vue-router
+
+使用:
+    router-link  to=&apos;跳转的url&apos;
+
+注意点:
+    1.x和2.x是不一样的
+</code></pre><hr>
+<h1 id="vue-resource"><a href="#vue-resource" class="headerlink" title="vue-resource"></a>vue-resource</h1><pre><code>作用:在Vue中发送网络请求的 GET/POST/JSONP
+
+网址:
+    https://github.com/pagekit/vue-resource
+
+文档地址:
+    https://github.com/pagekit/vue-resource/blob/master/docs/http.md
+
+注意:
+    它是一个基于Vue的第三方网络框架
+
+    jsonp的Ajax请求需要后台API接口的支持
+</code></pre><hr>
+<h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><h1 id="内容回顾"><a href="#内容回顾" class="headerlink" title="内容回顾"></a>内容回顾</h1><h1 id="webpack-1"><a href="#webpack-1" class="headerlink" title="webpack"></a>webpack</h1><pre><code>概念:
+    webpack就是一个资源打包工具,它可以将css,js,image,.vue等等文件当做一个模块来进行打包处理,最终将这些资源输出到一个统一的.js文件中,将来在系统中只需要请求这个打包好的.js文件即可完成所有的功能！
+
+为什么要选择webpack
+    1.vuejs官方脚手架工具中就使用了webpack模版
+    2.对所有的资源会做压缩等优化
+    3.它在开发过程中提供了一整套完整的功能,能够使我们开发过程变得高效
+</code></pre><hr>
+<h1 id="webpack的使用"><a href="#webpack的使用" class="headerlink" title="webpack的使用"></a>webpack的使用</h1><pre><code>使用途径:
+
+    官方文档
+
+    1.x版本,项目中使用的是1.13.3这个版本
+        http://webpack.github.io/docs/
+
+    2.x版本
+        https://webpack.js.org/
+
+    https://github.com/webpack/webpack
+
+学习文章:
+    http://www.w2bc.com/Article/50764
+    http://www.jianshu.com/p/42e11515c10f
+
+
+
+使用步骤:
+    1.安装webpack这个全局包 npm install webpack -g
+    2.在cmd控制面板中调用webpack的指令给定两个参数 要打包的文件 要输出的文件路径 例如:webpack main.js build.js
+</code></pre><hr>
+<h1 id="webpack的基本概念"><a href="#webpack的基本概念" class="headerlink" title="webpack的基本概念"></a>webpack的基本概念</h1><pre><code>什么是webpack?
+    Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader 的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、 JSON、Coffeescript、 LESS 等。
+
+Github地址:
+    https://github.com/webpack/webpack
+
+官网:
+    https://webpack.js.org/
+
+能做什么?
+    打包及优化我们的代码,还能做到按需加载
+
+相比于其它构建工具/打包工具,比如gulp好在哪里? 
+    http://webpackdoc.com/what-is-webpack.html
+
+    1.代码拆分
+    2.Loader
+    3.智能解析
+    4.插件系统
+    5.快速运行
+</code></pre><hr>
+<h1 id="webpack的安装"><a href="#webpack的安装" class="headerlink" title="webpack的安装"></a>webpack的安装</h1><pre><code>npm install webpack -g
+</code></pre><hr>
+<h1 id="webpack中的Loader"><a href="#webpack中的Loader" class="headerlink" title="webpack中的Loader"></a>webpack中的Loader</h1><pre><code>作用:
+    Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件，就需要使用 loader 进行转换。
+</code></pre><hr>
+<h1 id="webpack中的插件"><a href="#webpack中的插件" class="headerlink" title="webpack中的插件"></a>webpack中的插件</h1><pre><code>作用:
+    插件可以完成更多 loader 不能完成的功能。
+</code></pre><hr>
+<h1 id="webpack中webpack-dev-server"><a href="#webpack中webpack-dev-server" class="headerlink" title="webpack中webpack-dev-server"></a>webpack中webpack-dev-server</h1><pre><code>作用:
+    可以简化我们的webpack打包的操作,当我们的源代码更改后
+    会自动打包,并且刷新页面,有点类似于nodemon
+</code></pre><hr>
+<h1 id="npm-amp-cmd控制面板-amp-cmd的指令"><a href="#npm-amp-cmd控制面板-amp-cmd的指令" class="headerlink" title="npm? &amp; cmd控制面板 &amp;cmd的指令"></a>npm? &amp; cmd控制面板 &amp;cmd的指令</h1><pre><code>npm:
+    1.npmjs.com存储了很多nodejs第三方的功能包
+    2.利用npm这个工具,可以将nodejs第三方包通过相关指令进行安装,例如 npm install webpack -g
+    3.只要安装好了node.exe这个软件,就自动安装好了npm这个包
+
+如何查看npm
+    在终端中输入 npm -v
+</code></pre><hr>
+<h1 id="webpack案例"><a href="#webpack案例" class="headerlink" title="webpack案例"></a>webpack案例</h1><pre><code>意义:
+    明白模块化开发的思想(需要谁就导入谁)
+
+写法:
+    var 模块 = require(&apos;xxx/xxx.js&apos;);
+    路径可以是相对路径也可以是绝对路径
+
+
+注意:
+    我们通过require导入的模块,其实就是对应js文件中通过module.exports导出的东西
+
+步骤:
+    1.先写好js代码
+    2.利用webpack打包成浏览器可以解析的js代码,主要对main.js进行打包,这样main.js依赖的模块也会一并打包
+    3.在网页中导入上一步中打包并且生成好的build.js,在浏览器中运行
+
+webpack打包指令:
+    webpack 要打包的文件 输出的文件
+</code></pre><hr>
+<h1 id="项目搭建-文件夹搭建、文件搭建"><a href="#项目搭建-文件夹搭建、文件搭建" class="headerlink" title="项目搭建(文件夹搭建、文件搭建)"></a>项目搭建(文件夹搭建、文件搭建)</h1><p>Vue项目的根目录<br>├─node_modules         //存放项目中要用到的nodejs第三方包<br>└─src                  //项目开发阶段源码存放区<br>    ├─main.js          //Vue对象所在文件,打包总入口文件<br>    ├─App.vue          //App的入口文件<br>    ├─components       //子组件文件夹<br>    ├─kits             //工具类文件夹<br>|dist                  //项目发布阶段代码存放区<br>|statics               //项目静态资源文件存放区<br>    │  ├─css           //整个项目的样式文件<br>    │  ├─images        //整个项目的图片资源<br>    │  ├─MUI           //一个移动Web的UI框架<br>│ package.json            // npm 包管理配置文件和项目启动配置文件<br>| webpack.config.js    //webpack总的配置文件</p>
+<hr>
+<h1 id="使用-webpack-vue-来展示一个-Hello-Vue"><a href="#使用-webpack-vue-来展示一个-Hello-Vue" class="headerlink" title="使用 webpack+vue 来展示一个 Hello Vue"></a>使用 webpack+vue 来展示一个 <code>Hello Vue</code></h1><pre><code>依赖的包:
+    生产环境 : vue 
+    开发环境 : vue-loader vue-template-compiler css-loader
+
+使用步骤:
+    准备工作:
+        1.安装 vue vue-loader vue-template-compiler css-loader 的包
+        2.写好App.vue文件,格式参考下面的
+        3.在main.js中写好代码,代码主要有三部分
+            4.1 导入vue : import Vue from &apos;vue&apos;
+            4.2 导入需要的模块 : import App from &apos;./App.vue&apos;
+            4.3 创建Vue对象(写法参考代码）
+
+    开始打包
+        4.在webpack.config.js中配置好相关参数,主要有
+            4.1 配置好要打包的总文件(入口文件路劲)
+            4.2 配置好打包完成之后输出文件的路径
+            4.3 设置好打包vue的loader(因为webpack默认只支持js打包)
+
+    使用并且显示 `Hello Vue`
+        5.在dist目录中创建一个网页 index.html,并且在body中配置好
+        一个id=app 的div
+        6.在index.html的最后导入 刚刚打包好的bundle.js
+        7.在浏览器中运行index.html即可看到效果
+
+注意点:
+    1.在 4.3 步骤中,要写上`render : c=&gt;c(App)` 表示将vue渲染好的内容交给webpack去打包
+
+    2.在index.html页面中导入bundle.js时一定要注意,一定要在最后导入
+    否则可能出现找不到 #app 的错误
+</code></pre><hr>
+<h1 id="App-vue的结构"><a href="#App-vue的结构" class="headerlink" title="App.vue的结构"></a>App.vue的结构</h1><pre><code>&lt;template&gt;
+    写html代码
+
+    注意:这里必须有一个根元素,否则在vue2.x里面会报错,比如
+    &lt;div&gt;
+
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    写导出的代码:代码是固定的
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">export default&#123;</div><div class="line">	data()&#123;</div><div class="line">		return &#123;</div><div class="line">			属性:值</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+&lt;/script&gt;
+
+&lt;style&gt;
+    css样式
+&lt;/style&gt;
+</code></pre><hr>
+<h1 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h1><pre><code>作用:
+    提高效率,简化开发
+
+概念:
+    1.这个文件就是webpack的默认配置文件,默认名称为:webpack.config.js
+    2.将来只需要在cmd面板上执行 webpack 就会自动去查找webpack.config.js中的内容进行相关的打包操作
+
+配置文件的写法:
+    http://webpack.github.io/docs/configuration.html
+
+在配置文件的module.exports中,通常需要做哪些事?
+    1.写好入口文件配置
+    2.写好输出配置
+    3.写好Loader相关的配置
+    4.写好plugins(插件)相关的配置
+
+配置文件中的js代码:
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">    entry: &quot;./main.js&quot;,//输入文件</div><div class="line">    output: &#123;</div><div class="line">        filename:&apos;./build.js&apos;//输出文件</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+
+各参数详解:
+    http://blog.csdn.net/zaichuanguanshui/article/details/53610694
+</code></pre><hr>
+<h1 id="使用-html-webpack-plugin插件-webpack-dev-server包-来实现页面-文件-更新之后-自动在内存中打包并且刷新页面"><a href="#使用-html-webpack-plugin插件-webpack-dev-server包-来实现页面-文件-更新之后-自动在内存中打包并且刷新页面" class="headerlink" title="使用 html-webpack-plugin插件 + webpack-dev-server包 来实现页面(文件)更新之后,自动在内存中打包并且刷新页面"></a>使用 <code>html-webpack-plugin</code>插件 + <code>webpack-dev-server</code>包 来实现页面(文件)更新之后,自动在内存中打包并且刷新页面</h1><pre><code>好处:
+    当某个文件(页面、css、js等)更新之后webpack能自动检测到,并且打包,打包完成之后再刷新页面,这一条龙服务
+
+需要的包:
+    webpack webpack-dev-server html-webpack-plugin
+
+使用步骤:
+    1.安装 webpack webpack-dev-server html-webpack-plugin 这三个包
+
+    2.在webpack.config.js文件中配置相关代码
+        主要配置两个地方
+
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var htmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);</div><div class="line">	</div><div class="line">	</div><div class="line">   plugins:[</div><div class="line">       new htmlWebpackPlugin(&#123;</div><div class="line">           title:&apos;index&apos;,</div><div class="line">           filename:&apos;index.html&apos;, //在内存中生成的网页的名称</div><div class="line">           template:&apos;index222.html&apos; //生成网页名称的依据</div><div class="line">       &#125;)</div><div class="line">   ]</div></pre></td></tr></table></figure>
+
+
+     3.package.json的 scripts 标签中配置一段代码
+         <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">  	&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,</div><div class="line">  	&quot;dev&quot; : &quot;webpack-dev-server --inline --hot --open --port 3008&quot;</div><div class="line">	&#125;,</div></pre></td></tr></table></figure>
+
+
+     4.在终端中运行 npm run dev 即可
+
+
+ package.json的 scripts 中dev对应值的参数说明:
+
+         -- inline :自动刷新
+        -- hot :热加载
+        -- port 指定监听端口
+        -- open : 自动在默认浏览器中打开
+        -- host： 可以指定服务器的ip，不指定默认为127.0.0.1(localhost)
+
+
+ 注意点:
+     它是在内存中生成了一个网页,凡是对可以编译的文件修改之后都会自动打包并且刷新浏览器
+</code></pre><hr>
+<h1 id="webpack-dev-server-使用过程中可能遇到的问题"><a href="#webpack-dev-server-使用过程中可能遇到的问题" class="headerlink" title="webpack-dev-server 使用过程中可能遇到的问题"></a>webpack-dev-server 使用过程中可能遇到的问题</h1><pre><code>1.webstorm修改文件，webpack-dev-server不会自动编译刷新 : 
+    http://www.cnblogs.com/wshiqtb/p/5924172.html
+
+2.启动webpack-dev-server成功后在地址栏中永远只出现 http://localhost:3008/webpack-dev-server/
+    原因:在package.json中的script配置错了
+    &quot;dev&quot;: &quot;webpack-dev-server --inline --hot --open --port 3008&quot;
+
+    写成了下面的错误形式
+    &quot;dev&quot;: &quot;webpack-dev-server --line --hot --open --port 3008&quot;
+</code></pre><hr>
+<h1 id="webpack-打包其它扩展名的文件"><a href="#webpack-打包其它扩展名的文件" class="headerlink" title="webpack 打包其它扩展名的文件"></a>webpack 打包其它扩展名的文件</h1><h1 id="webpack-打包css"><a href="#webpack-打包css" class="headerlink" title="webpack 打包css"></a>webpack 打包css</h1><pre><code>需要的包:
+    style-loader css-loader
+
+拓展:
+    package.json
+
+    1.利用npm init 来创建一个package.json
+    2.在安装包的时候在后面加上 npm i 包 --save-dev
+    3.以后提交到svn、git或是发给别人时不要把node_modules提交上去或是发给别人,只需要把package.json提交上去,别人拿到package.json之后只需要在终端执行一下 npm install 就可以安装全部依赖的包了
+
+使用步骤:
+    1.使用 npm init 生成package.json文件
+    2.安装style-loader css-loader这两个包 npm i style-loader css-loader --save-dev
+    3.在webpack.config.js中配置好相关的js代码
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">    entry: &quot;./main.js&quot;,</div><div class="line">    output: &#123;</div><div class="line">        filename:&apos;./build.js&apos;</div><div class="line">    &#125;,</div><div class="line">    module : &#123;</div><div class="line">        loaders : [</div><div class="line">            &#123;</div><div class="line">                test:/\.css$/,</div><div class="line">                loader:&apos;style-loader!css-loader&apos;</div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+
+注意点:
+    1.在loader中的写法必须是 loader:&apos;style-loader!css-loader&apos;,中间用!分割
+    2.加载顺序是从右到左
+    3.配置文件中不要写错了,写错了可能报的错就到别的地方去了,比如在配置文件中少写了loaders中的s,到时候报错就不知道报错到哪里去了,建议拷贝
+</code></pre><hr>
+<h1 id="autoprefixer-loader"><a href="#autoprefixer-loader" class="headerlink" title="autoprefixer-loader"></a>autoprefixer-loader</h1><pre><code>作用:
+    自动前缀的包,自动在打包的过程中将css写法加上不同浏览器内核的前缀,达到不同浏览器的兼容
+
+依赖的包:
+    style-loader css-loader autoprefixer-loader
+
+使用步骤:
+    1.安装好 autoprefixer-loader 这个包
+        npm install autoprefixer-loader --save-dev
+
+    2.在webpack.config.js中配置好相关的js代码
+
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">module : &#123;</div><div class="line">        loaders : [</div><div class="line">            &#123;</div><div class="line">                test:/\.css$/,</div><div class="line">                loader:&apos;style-loader!css-loader!autoprefixer-loader&apos;</div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+
+注意点:
+    1.在loader中的写法必须是 loader:&apos;style-loader!css-loader!autoprefixer-loader&apos;,中间用!分割
+    2.加载顺序是从右到左
+    3.配置文件中不要写错了,写错了可能报的错就到别的地方去了,比如在配置文件中少写了loaders中的s,到时候报错就不知道报错到哪里去了,建议拷贝
+</code></pre><hr>
+<h1 id="webpack-打包less"><a href="#webpack-打包less" class="headerlink" title="webpack 打包less"></a>webpack 打包less</h1><pre><code>需要的包:
+    style-loader css-loader autoprefixer-loader less-loader less
+
+使用步骤:
+    1.安装 less less-loader 包
+    2.在webpack.config.js中进行配置
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">             test:/\.less$/,</div><div class="line">             loader:&apos;style-loader!css-loader!autoprefixer-loader!less-loader&apos; //注意新开一个</div><div class="line">         &#125;</div></pre></td></tr></table></figure>
+
+
+注意点:
+    1.把原先css后缀的文件名,改为less,并且在里面使用@作为占位符
+    2.不要在原先css配置的loader基础上面改,最好重新再写一个{}
+    3.less-loader 依赖less包
+</code></pre><hr>
+<h1 id="webpack-打包-sass"><a href="#webpack-打包-sass" class="headerlink" title="webpack 打包 sass"></a>webpack 打包 sass</h1><pre><code>需要的包:
+    style-loader css-loader sass-loader node-sass
+
+使用步骤:
+    1.安装 sass-loader node-sass 包
+    2.在webpack.config.js中进行配置
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">             test:/\.sass$/,</div><div class="line">             loader:&apos;style-loader!css-loader!autoprefixer-loader!sass-loader&apos;</div><div class="line">         &#125;</div></pre></td></tr></table></figure>
+
+
+注意点:
+    1.把原先css后缀的文件名,改为sass,并且在里面使用$作为占位符
+    2.不要在原先css配置的loader基础上面改,最好重新再写一个{}
+    3.sass-loader依赖 node-sass
+</code></pre><hr>
+<h1 id="webpack-实现图片及字体图标打包"><a href="#webpack-实现图片及字体图标打包" class="headerlink" title="webpack 实现图片及字体图标打包"></a>webpack 实现图片及字体图标打包</h1><pre><code>需要的包:
+    url-loader file-loader
+
+使用步骤:
+    1.安装 url-loader 及 file-loader包
+    2.在webpack.config.js中进行配置
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">             test:/\.(png|jpg)$/, //正则表达式</div><div class="line">             loader:&apos;url?limit=50000&apos; //url是url-loader的简写,后面的图片大小表示当图片小于40kb的时候,那么则将这张图片编译成base64的字符串给浏览器使用,否则将图片打包到编译文件夹中</div><div class="line">         &#125;</div></pre></td></tr></table></figure>
+
+
+文字图标:
+    https://github.com/dcloudio/mui/tree/master/examples/hello-mui
+
+    http://www.dcloud.io/hellomui/examples/icons-extra.html
+
+注意事项:
+    1.url-loade 依赖 file-loader
+    2.url?limit=xxx 的含义
+    3.文字图标在原先loader的后面加上 ttf
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">             test:/\.(png|jpg|ttf)$/, //正则表达式</div><div class="line">             loader:&apos;url?limit=50000&apos; //url是url-loader的简写,后面的图片大小表示当图片小于40kb的时候,那么则将这张图片编译成base64的字符串给浏览器使用,否则将图片打包到编译文件夹中</div><div class="line">         &#125;</div></pre></td></tr></table></figure>
+</code></pre><hr>
+<h1 id="webpack-es6转es5的语法"><a href="#webpack-es6转es5的语法" class="headerlink" title="webpack es6转es5的语法"></a>webpack es6转es5的语法</h1><pre><code>为什么要改?
+    因为浏览器只识别es5的语法
+
+依赖的包:
+    babel-core babel-loader babel-preset-es2015 babel-plugin-transform-runtime
+
+使用步骤:
+    1.安装 babel-core babel-loader babel-preset-es2015 babel-plugin-transform-runtime 包
+    2.在packweb.config.js中进行配置
+        配置有两种方式:
+
+        第一种:在loaders中配置一个
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">             test:/\.js$/, //正则表达式</div><div class="line">             loader:&apos;babel-loader?presets[]=es2015&apos;,</div><div class="line">             exclude:/node_modules/</div><div class="line">         &#125;</div></pre></td></tr></table></figure>
+
+        第二种【推荐】:在loaders中配置,然后还要再配置一个babels
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">             test:/\.js$/, //正则表达式</div><div class="line">             loader:&apos;babel-loader&apos;,</div><div class="line">             exclude:/node_modules/</div><div class="line">         &#125;</div><div class="line">         </div><div class="line">         babel:&#123;</div><div class="line">       presets:[&apos;es2015&apos;],</div><div class="line">       plugins:[&apos;transform-runtime&apos;]</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</code></pre><hr>
+<h1 id="es6语法总结"><a href="#es6语法总结" class="headerlink" title="es6语法总结"></a>es6语法总结</h1><pre><code>导入的写法
+
+    1.没有变量接收
+        import &apos;xxx.xxx&apos;;
+
+    2.有变量接收
+        import calcObj from &apos;./calc.js&apos;;
+
+        //按需导入
+        import {substrict} from &apos;./calc.js&apos;;
+
+        import {PI} from &apos;./calc.js&apos;;
+
+导出的写法
+
+    第一种:
+    module.exports = {
+        add,substrict
+    }
+
+    第二种:
+    export function substrict(){
+    }
+
+    第三种:
+    export const PI = 3.14
+
+    第四种:
+    export default{
+        add,substrict
+    }
+
+方法的写法
+    箭头函数
+
+    (形参1,形参2,形参N)=&gt;{
+        代码xxxx
+    }
+
+注意点:
+     如果是使用 import {xxxx} from &apos;./xxx.js&apos;
+
+     在导出时必须使用这种
+     export const xxx = xxx;
+     或者
+     export function xxx = {
+         xxxxxx
+     }
+</code></pre><hr>
+<h1 id="Vue项目中使用到的Vue的技术点"><a href="#Vue项目中使用到的Vue的技术点" class="headerlink" title="Vue项目中使用到的Vue的技术点"></a>Vue项目中使用到的Vue的技术点</h1><pre><code>1.webpack
+2.利用vue-resource来请求API
+3.利用vue-router来实现路由
+4.利用vue的组件化思想来实现每个页面
+5.这个项目属于单页
+</code></pre><hr>
+<div class="pagination"><a class="next" href="/2017/03/27/JS代码兼容问题/">NEXT</a></div><div class="copyright"><p>© 2017 <a href="http://yoursite.com">Lh</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ycwalker/hexo-theme-cutie" target="_blank">hexo-theme-cutie</a>.</p></div></article></body></html>
